@@ -3,7 +3,8 @@ services:
   web:
     build: .
     port: 8000:8000
-    volume: .:shorten/
+    volume: 
+      - .:shorten/
 
   db:
     image: mysql
