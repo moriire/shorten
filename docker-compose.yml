@@ -1,0 +1,17 @@
+version: 3
+services:
+  web:
+    build: .
+    port: 8000:8000
+    volume: .:shorten/
+
+  db:
+    image: mysql
+    environment:
+      - "MYSQL_USER: root",
+      - "MYSQL_ROOT_PASSWORD: root",
+      - "MYSQL_PASSWORD: root",
+      - "MYSQL_HOST: localhost",
+      - "MYSQL_PORT: 3306",
+    port: 3306:3306,
+
